@@ -66,6 +66,10 @@ const initServer = async () => {
                         description: 'User related endpoints'
                     },
                     {
+                        name: 'bookings',
+                        description: 'Bookings related endpoints'
+                    },
+                    {
                         name: 'oauth2-resources',
                         description: 'Oauth2 resources related endpoints'
                     },

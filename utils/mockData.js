@@ -36,6 +36,12 @@ export const mockData = {
         email: 'sharan@wednesday.is',
         oauth_client_id: 1
     },
+    MOCK_BOOKING: {
+        id: 1,
+        fromLocation: 'Delhi',
+        toLocation: 'Mumbai',
+        byUser: 1
+    },
     MOCK_OAUTH_CLIENTS: (metadataOptions = DEFAULT_METADATA_OPTIONS) => ({
         id: 1,
         clientId: 'TEST_CLIENT_ID_1',

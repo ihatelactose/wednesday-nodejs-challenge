@@ -11,6 +11,12 @@ export function configDB(metadataOptions = DEFAULT_METADATA_OPTIONS) {
     userMock.findByPk = query => userMock.findById(query);
     userMock.count = () => 1;
 
+    const bookingMock = DBConnectionMock.define(
+        'bookings',
+        mockData.MOCK_BOOKING
+    );
+    bookingMock.count = () => 1;
+
     const oauthClientsMock = DBConnectionMock.define(
         'oauth_clients',
         mockData.MOCK_OAUTH_CLIENTS(metadataOptions)
@@ -46,6 +52,7 @@ export function configDB(metadataOptions = DEFAULT_METADATA_OPTIONS) {
         oauthClientScopesMock.findById(query);
     return {
         users: userMock,
+        bookings: bookingMock,
         oauth_clients: oauthClientsMock,
         oauth_access_tokens: oauthAccessTokensMock,
         oauth_client_resources: oauthClientResourcesMock,
