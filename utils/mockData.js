@@ -40,7 +40,7 @@ export const mockData = {
         id: 1,
         fromLocation: 'Delhi',
         toLocation: 'Mumbai',
-        byUser: 1
+        userId: 1
     },
     MOCK_OAUTH_CLIENTS: (metadataOptions = DEFAULT_METADATA_OPTIONS) => ({
         id: 1,
