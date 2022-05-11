@@ -1,8 +1,8 @@
 CREATE TABLE cabs 
  (
    id               INT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
-   driver_id_fk     INT UNSIGNED UNIQUE,
+   driver_id        INT UNSIGNED UNIQUE,
    cab_type         ENUM('bike', 'auto', 'sedan', 'premier'),
    cab_number       VARCHAR(32) NOT NULL,
-   FOREIGN KEY(driver_id_fk) REFERENCES drivers(id)
+   CONSTRAINT cabs_driver_fk FOREIGN KEY(driver_id) REFERENCES drivers(id)
  )
