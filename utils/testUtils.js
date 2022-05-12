@@ -8,14 +8,14 @@ export function configDB(metadataOptions = DEFAULT_METADATA_OPTIONS) {
     const DBConnectionMock = new SequelizeMock();
 
     const userMock = DBConnectionMock.define('users', mockData.MOCK_USER);
-    userMock.findByPk = query => userMock.findById(query);
+    userMock.findByPk = query => users.findById(query);
     userMock.count = () => 1;
 
     const bookingMock = DBConnectionMock.define(
         'bookings',
         mockData.MOCK_BOOKING
     );
-    bookingMock.findByPk = query => bookingMock.findById(query);
+    bookingMock.findByPk = query => bookings.findById(query);
     bookingMock.count = () => 1;
 
     const cabMock = DBConnectionMock.define('cabs', mockData.MOCK_CAB);
