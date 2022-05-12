@@ -7,7 +7,7 @@ module.exports = {
                     'ST_SRID',
                     Sequelize.fn(
                         'ST_GeomFromText',
-                        'POINT(73.90242886592246 18.47975944070295)'
+                        'POINT(74.74289221807756 19.095417023308773)'
                     ),
                     4326
                 ),
@@ -36,7 +36,7 @@ module.exports = {
                     'ST_SRID',
                     Sequelize.fn(
                         'ST_GeomFromText',
-                        'POINT(39.90242886592246 -76.47975944070295)'
+                        'POINT(23.838435441668835 78.73242053002151)'
                     ),
                     4326
                 ),
@@ -49,7 +49,7 @@ module.exports = {
                     'ST_SRID',
                     Sequelize.fn(
                         'ST_GeomFromText',
-                        'POINT(73.90242886592246 18.47975944070295)'
+                        'POINT(78.73242053002151 23.838435441668835)'
                     ),
                     4326
                 ),
