@@ -42,6 +42,19 @@ export const mockData = {
         toLocation: 'Mumbai',
         userId: 1
     },
+    MOCK_CAB: {
+        id: 1,
+        driverId: 1,
+        cabType: 'bike',
+        cabNumber: 'WED14519DAY'
+    },
+    MOCK_DRIVER: {
+        id: 1,
+        firstName: 'John',
+        lastName: 'Doe',
+        driverStatus: 'open',
+        currentLocation: 'POINT(73.90242886592246 18.47975944070295)'
+    },
     MOCK_OAUTH_CLIENTS: (metadataOptions = DEFAULT_METADATA_OPTIONS) => ({
         id: 1,
         clientId: 'TEST_CLIENT_ID_1',
