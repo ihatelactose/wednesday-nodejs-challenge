@@ -14,6 +14,7 @@ import {
 } from 'utils/mockData';
 import { resetAndMockDB } from 'utils/testUtils';
 import { stringifyWithCheck } from 'utils';
+import { transformDbArrayResponseToRawResponse } from 'utils/transformerUtils';
 
 describe('util tests', () => {
     const adminToken = createMockTokenWithScope(SCOPE_TYPE.ADMIN);
@@ -432,5 +433,11 @@ describe('stringifyWithCheck', () => {
         obj.data = { body: 'This is the real answer' };
         const res = stringifyWithCheck(obj);
         expect(res).toBe(JSON.stringify(obj.data));
+    });
+
+    it('should throw an error if provided type is not an array', () => {
+        expect(() => {
+            transformDbArrayResponseToRawResponse({ a: 1 });
+        }).toThrow('The required type should be an object(array)');
     });
 });

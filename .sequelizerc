@@ -1,5 +1,6 @@
 const path = require('path');
 require('utils/configureEnv')();
 module.exports = {
-  'config': path.resolve('config', 'db.js')
-}
+    config: path.resolve('config', 'db.js'),
+    'models-path': path.resolve('lib/models')
+};

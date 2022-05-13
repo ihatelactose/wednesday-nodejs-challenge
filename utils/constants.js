@@ -5,6 +5,28 @@ export const ONE_USER_DATA = {
     email: 'mac@wednesday.is'
 };
 
+export const ONE_BOOKING_DATA = {
+    id: 1,
+    fromLocation: 'Delhi',
+    toLocation: 'Mumbai',
+    userId: 1
+};
+
+export const ONE_CAB_DATA = {
+    id: 1,
+    driverId: 1,
+    cabType: 'bike',
+    cabNumber: 'WED14519DAY'
+};
+
+export const ONE_DRIVER_DATA = {
+    id: 1,
+    firstName: 'John',
+    lastName: 'Doe',
+    driverStatus: 'open',
+    currentLocation: 'POINT(73.90242886592246 18.47975944070295)'
+};
+
 export const GRANT_TYPE = {
     CLIENT_CREDENTIALS: 'CLIENT_CREDENTIALS'
 };
