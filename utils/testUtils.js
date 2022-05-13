@@ -71,12 +71,12 @@ export function configDB(metadataOptions = DEFAULT_METADATA_OPTIONS) {
     };
 }
 
-export function bustDB() {
+export async function bustDB() {
     // this will clear all the entries in your tables
-    users.sync({ force: true });
-    bookings.sync({ force: true });
-    cabs.sync({ force: true });
-    drivers.sync({ force: true });
+    await users.sync({ force: true });
+    await bookings.sync({ force: true });
+    await cabs.sync({ force: true });
+    await drivers.sync({ force: true });
 }
 
 export async function mockDB(
