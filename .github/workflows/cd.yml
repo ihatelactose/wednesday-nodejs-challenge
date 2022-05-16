@@ -1,4 +1,4 @@
-name: node-hapi (Dev & Prod)
+name: wednesday-nodejs-challenge (Dev & Prod)
 on:
     push:
         branches:
@@ -49,19 +49,19 @@ jobs:
                   docker push $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
 
             - name: Render Amazon ECS task definition
-              id: node-hapi-container
+              id: wednesday-nodejs-challenge
               uses: aws-actions/amazon-ecs-render-task-definition@v1
               with:
                   task-definition: task-definition/${{ env.ENV_NAME }}.json
-                  container-name: node-hapi-${{ env.ENV_NAME }}
+                  container-name: wednesday-nodejs-challenge
                   image: ${{ steps.login-ecr.outputs.registry }}/${{ secrets.AWS_ECR_REPOSITORY }}-${{ env.ENV_NAME }}:${{ github.sha }}
 
             - name: Deploy to Amazon ECS service
               uses: aws-actions/amazon-ecs-deploy-task-definition@v1
               with:
-                  task-definition: ${{ steps.node-hapi-container.outputs.task-definition }}
-                  service: node-hapi-${{ env.ENV_NAME }}
-                  cluster: node-hapi-${{ env.ENV_NAME }}
+                  task-definition: ${{ steps.wednesday-nodejs-challenge.outputs.task-definition }}
+                  service: wednesday-challenge-service
+                  cluster: wednesday-challenge-cluster
 
             - name: Logout of Amazon ECR
               if: always()
