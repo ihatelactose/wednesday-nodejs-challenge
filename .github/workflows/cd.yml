@@ -94,9 +94,9 @@ jobs:
                   message: 'Update badges'
                   add: 'badges/'
                   push: false
-            - name: Pushing to a protected branch
-              uses: CasperWA/push-protected@v2
-              with:
-                  token: ${{ secrets.PUSH_TO_PROTECTED_BRANCH }}
-                  branch: ${{ steps.vars.outputs.stage }}
-                  unprotect_reviews: true
+            # - name: Pushing to a protected branch
+            #   uses: CasperWA/push-protected@v2
+            #   with:
+            #       token: ${{ secrets.PUSH_TO_PROTECTED_BRANCH }}
+            #       branch: ${{ steps.vars.outputs.stage }}
+            #       unprotect_reviews: true
