@@ -20,4 +20,4 @@ if [ "$ENVIRONMENT_NAME" == "local" ]
         done
 fi
 
-yarn start:development
+yarn start
