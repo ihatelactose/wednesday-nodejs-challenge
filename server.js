@@ -189,7 +189,6 @@ process.on('unhandledRejection', err => {
 
 prepDatabase().then(
     () => {
-        if (process.env.ENVIRONMENT_NAME === 'development') {
             // eslint-disable-next-line no-console
             console.log(
                 `Database connection to ${
@@ -198,7 +197,6 @@ prepDatabase().then(
                     dbConfig.development
                 )}`
             );
-        }
         // eslint-disable-next-line no-console
         console.log(`Initializing the server...`);
 
