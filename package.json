@@ -16,7 +16,7 @@
     "scripts": {
         "start:development": "ENVIRONMENT_NAME=development node index.js",
         "start:local": "ENVIRONMENT_NAME=local nodemon start index.js",
-        "start": "yarn start:local",
+        "start": "ENVIRONMENT_NAME=prod node index.js",
         "format": "prettier-standard './**/**/*.js'",
         "lint": "npm run lint:js",
         "lint:eslint": "eslint --ignore-path .gitignore --ignore-pattern internals/scripts",

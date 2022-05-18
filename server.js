@@ -188,14 +188,16 @@ process.on('unhandledRejection', err => {
 
 prepDatabase().then(
     () => {
-        // eslint-disable-next-line no-console
-        console.log(
-            `Database connection to ${
-                dbConfig.development.url
-            } is successful.\nThe following options were applied: ${JSON.stringify(
-                dbConfig.development
-            )}`
-        );
+        if (process.env.ENVIRONMENT_NAME === 'development') {
+            // eslint-disable-next-line no-console
+            console.log(
+                `Database connection to ${
+                    dbConfig.development.url
+                } is successful.\nThe following options were applied: ${JSON.stringify(
+                    dbConfig.development
+                )}`
+            );
+        }
         // eslint-disable-next-line no-console
         console.log(`Initializing the server...`);
 
