@@ -43,6 +43,7 @@ export let server;
 const initServer = async () => {
     server = Hapi.server(serverConfig);
 
+    console.log({ envs: process.env });
     // Register hapi swagger plugin
     await server.register([
         inert,
