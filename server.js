@@ -43,6 +43,7 @@ export let server;
 const initServer = async () => {
     server = Hapi.server(serverConfig);
 
+    console.log({ envs: process.env });
     // Register hapi swagger plugin
     await server.register([
         inert,
@@ -188,7 +189,6 @@ process.on('unhandledRejection', err => {
 
 prepDatabase().then(
     () => {
-        if (process.env.ENVIRONMENT_NAME === 'development') {
             // eslint-disable-next-line no-console
             console.log(
                 `Database connection to ${
@@ -197,7 +197,6 @@ prepDatabase().then(
                     dbConfig.development
                 )}`
             );
-        }
         // eslint-disable-next-line no-console
         console.log(`Initializing the server...`);
 
