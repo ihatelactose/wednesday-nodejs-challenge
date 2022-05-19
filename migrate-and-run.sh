@@ -1,5 +1,5 @@
 #!/bin/bash
-set -a . ".env$ENVIRONMENT_NAME" set +a
+# set -a . ".env$ENVIRONMENT_NAME" set +a
 # create the db for local builds
 sleep 10
 if [ "$ENVIRONMENT_NAME" == "local" ]
@@ -7,6 +7,7 @@ if [ "$ENVIRONMENT_NAME" == "local" ]
         npx sequelize db:create
 fi
 
+echo "inside here"
 # run migrations
 npx sequelize db:migrate
 
